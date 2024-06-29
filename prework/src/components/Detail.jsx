@@ -2,6 +2,7 @@ import Add from "./Add.jsx"
 import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router"
 import { supabase } from "./Client.jsx";
+import { Link } from "react-router-dom"
 /*You can easily copy - paste these import statements but should
 at least be familiar with them*/
 /*It might be useful to review them periodically*/
@@ -22,13 +23,13 @@ const Detail = ( ) => {
     return (
     <>
         <div className={`detail blue`}>
-            <p> Creator Name: [{ state.title }]. </p>
-            <p> Post Id: [{ state.id }]. </p>
+            <p> Creator Name: [{ state.name }]. </p>
+            <p> Creator Id: [{ state.id }]. </p>
             <br />
             <br></ br>
-            <img></img> {/*Add the image here*/}
-            <p> Creator Description: [{ state.date }]. </p>
-            <p> Social Media Instagram: [{ state.date }] </p>
+            <img width= "375px" height="300px" src={state.image_url} ></img> {/*Add the image here*/}
+            <p> Creator Description: { state.description }. </p>
+            <Link to={ state.url }> 🎖 YouTube Channel 🎖 </Link>
             <p> Twitter: [{ state.date }] </p>
             <p> Facebook: [{ state.date }] </p>
             <br />

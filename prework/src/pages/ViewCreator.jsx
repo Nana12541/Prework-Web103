@@ -2,17 +2,18 @@ import React, { useState, useEffect } from 'react';
 import Add from '../components/Add.jsx';
 import { supabase } from '../components/Client.jsx'
 
-const ReadPost = () => {
+const ViewCreator = () => {
     const [isError, setIsError] = useState(null);
-    const [creators, setCreators] = useState(null);
+    const [creators, setCreators] = useState([]);
 
     useEffect(() => {
-        // READ all post from table
+        // READ all creators from table
         const getCreator = async () => {
             const { data , error } = await supabase
-            .from('Posts')
+            .from('Creators')
             .select()
-            // set state of posts
+           
+            // set state of creators
             if (error) {
                 //Check if there is an error with accessing the information.
                 setIsError(" Error ");
@@ -31,12 +32,12 @@ const ReadPost = () => {
     return (
         <>
             <div>
-                <p class="text"> Text goes here</p>
+                <p class="text"> The list of creators: </p>
                 {creators && (
                     <div className='container'>
-                            {creators.map(post => (
+                            {creators.map(creators => (
                                     <div className={`members`}>
-                                        <Add key={post.id} post={post} />
+                                        <Add key={creators.id} creators={creators} />
                                     </div>
                                     //We map everything and set it here.
                             ))}
@@ -48,4 +49,4 @@ const ReadPost = () => {
 
 }
 
-export default ReadPost;
+export default ViewCreator;

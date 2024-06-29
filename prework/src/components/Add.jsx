@@ -4,8 +4,9 @@ import { supabase } from './Client.jsx'
 import Detail from './Detail.jsx';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 
-const Add = ( {post} ) => {
-    const [crew, setCrew] = useState(post);
+const Add = ( {creators} ) => {
+    const [create, setCreate] = useState(creators);
+
     {/*This add is used to render the table on the 
     front page. I might need to fix the state variable's name
     that is above. */}
@@ -13,24 +14,20 @@ const Add = ( {post} ) => {
     return (
         <>
             <h2> 
-            
             {/* The comments with the state that is added 
             so that we can keep track of the information.*/}
-            <Link style={{ color: "white" }}
-            to={`/detail/:${post.id}`} 
-            state={ {id: post.id, date: post.created_at, title: post.title, 
-            description: post.description}}>
+            <Link style={{ color: "white" }} to={`/detail/:${create.id}`}
+            state={ {id: create.id, name: create.name, url: create.url, 
+            image_url: create.image_url, description: create.description}}>
             
-                {/* We have a span class and also the information that is rendered to
+            {/* We have a span class and also the information that is rendered to
             the front page of the Creator. */}
                 <span className="tab"> 
-                <p> Post Id: {post.id} </p>
-                <p> Question: {post.title} </p>
-                <p> Post Date: {post.created_at} </p>
+                <p> Creator Id: { create.id } </p>
+                <p> Name: { create.name } </p>
+                <p> Description: { create.description } </p>
                 </span> 
-            
             </Link> 
-            
             </h2>
 
         </>

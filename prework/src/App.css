@@ -40,3 +40,25 @@
 .read-the-docs {
   color: #888;
 }
+
+.Navbar {
+  width: 99%;
+  height: 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: orange;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.text {
+  margin-top: 80px;
+  padding-bottom: 0px;
+}

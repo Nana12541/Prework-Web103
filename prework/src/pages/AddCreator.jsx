@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
-import ReadPost from '../form/ReadPost'
+import ReadPost from './ViewCreator.jsx'
 import { supabase } from '../components/Client.jsx'
 
 const CreatePost = () => {
+    {/* Go over the CRUD stuff in the pages folder. Here, we want to 
+    first fix the table information and change the table. You then
+    want to start adding the links and images. The goal is to have the
+    site showing the creator information. */}
+    
     const [created_at, setDate] = useState(0);
     const [title, setTitle] = useState("Title");
     const [description, setDescription] = useState("Description");

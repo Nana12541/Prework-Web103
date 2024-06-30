@@ -6,8 +6,6 @@ import { supabase } from '../components/Client.jsx'
 
 const EditCreator = () => {
     const [name, setName] = useState("");
-    const [speed, setSpeed] = useState(0);
-    const [color, setColor] = useState("plum");
     const [error, setError] = useState(null);
     const [creator, setCreator] = useState({id: 0, name: "", url: "", image_url: "", description: ""});
     const [id, setId] = useState(0);
@@ -56,10 +54,11 @@ const EditCreator = () => {
         <>
             <div>
                 <form className='forms'>
-                    <label htmlFor='id'> Post Id: </label>
-                    <input type='text' id='id' name='id' value={creator.id}
-                    onChange={handleChange} /> <br/> <br/>
 
+                    <label htmlFor='name'> Id: </label>
+                    <input type='text' id='id' name='id' value={creator.id} 
+                    onChange={handleChange} /> <br/> <br/>
+                    
                     <label htmlFor='name'> Name: </label>
                     <input type='text' id='name' name='name' value={creator.name} 
                     onChange={handleChange} /> <br/> <br/>
@@ -75,10 +74,7 @@ const EditCreator = () => {
                     <label htmlFor='date'> Description: </label>
                     <input type='description' id='description' name='description' value={creator.descrition}
                     onChange={handleChange} /> <br/> <br/>
-                    
-                    <label htmlFor="red">Red</label><br />
-                    <input type="radio" id="red" name="color" value="red" onChange={handleChange} /><br />
-
+                                   
                     <input className="inputs" type="submit" value="Edit a Creator" onClick={updateCreator}/>
                     <input className="inputs" type="submit" value="Delete a Creator" onClick={deleteCreator}/>
                 </form>

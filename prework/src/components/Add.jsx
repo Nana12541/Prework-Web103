@@ -6,11 +6,7 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 
 const Add = ( {creators} ) => {
     const [create, setCreate] = useState(creators);
-
-    {/*This add is used to render the table on the 
-    front page. I might need to fix the state variable's name
-    that is above. */}
-
+    
     return (
         <>
             <h2> 

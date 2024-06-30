@@ -5,10 +5,6 @@ import ViewCreator from './ViewCreator.jsx'
 import { supabase } from '../components/Client.jsx'
 
 const AddCreator = () => {
-    {/* Go over the CRUD stuff in the pages folder. Here, we want to 
-    first fix the table information and change the table. You then
-    want to start adding the links and images. The goal is to have the
-    site showing the creator information. */}
     
     const [name, setName] = useState("Name");
     const [description, setDescription] = useState("Description");
